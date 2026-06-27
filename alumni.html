@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni - EESL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">
+            <img src="./images/EESL logo.png" alt="EESL Logo">
+        </a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="pi.html" class="nav-link">P.I.</a></li>
+                <li><a href="member.html" class="nav-link">Member</a></li>
+                <li><a href="alumni.html" class="nav-link active">Alumni</a></li>
+                <li><a href="publication.html" class="nav-link">Publication</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+    <main class="page-content">
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Alumni</h2>
+                
+                <div class="members-list">
+                    <!-- Alumni Card 1 -->
+                    <div class="member-card">
+                        <div class="member-card-main">
+                            <div class="member-image" style="background-color: #e0e4e8;">
+                                <img src="./alumni/placeholder.jpg" alt="Yeseul Shin Profile" onerror="this.style.display='none';">
+                            </div>
+                            <div class="member-info">
+                                <div class="member-header">
+                                    <div class="member-name">
+                                        <span class="name-eng">Yeseul Shin</span>
+                                        <span class="name-kor">(신예슬)</span>
+                                    </div>
+                                    <button class="btn-detail toggle-detail-btn">DETAIL</button>
+                                </div>
+                                <div class="member-contact">
+                                    <p><strong>DEGREE:</strong> M.S. (Graduated in Feb. 2026)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Toggle Details Section -->
+                        <div class="member-detail-section research-field-toggle">
+                            <h4 class="detail-title">MASTER'S THESIS & RESEARCH FIELD</h4>
+                            <p class="detail-content">
+                                [Placeholder] Investigation of novel electrolyte additives for high-voltage stability in next-generation lithium-ion batteries. Analysis of degradation mechanisms and solid electrolyte interphase (SEI) formation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Alumni Card 2 -->
+                    <div class="member-card">
+                        <div class="member-card-main">
+                            <div class="member-image" style="background-color: #e0e4e8;">
+                                <img src="./alumni/placeholder.jpg" alt="Jisu Kim Profile" onerror="this.style.display='none';">
+                            </div>
+                            <div class="member-info">
+                                <div class="member-header">
+                                    <div class="member-name">
+                                        <span class="name-eng">Jisu Kim</span>
+                                        <span class="name-kor">(김지수)</span>
+                                    </div>
+                                    <button class="btn-detail toggle-detail-btn">DETAIL</button>
+                                </div>
+                                <div class="member-contact">
+                                    <p><strong>DEGREE:</strong> M.S. (Graduated in Aug. 2026)</p>
+                                    <p><strong>CURRENT POSITION:</strong> LG Energy Solution</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Toggle Details Section -->
+                        <div class="member-detail-section research-field-toggle">
+                            <h4 class="detail-title">MASTER'S THESIS & RESEARCH FIELD</h4>
+                            <p class="detail-content">
+                                [Placeholder] Structural engineering of nickel-rich layered cathode materials for advanced energy storage. Evaluating electrochemical performance, thermal stability, and capacity retention under extreme conditions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Electrochemical Energy Storage Laboratory (EESL). All rights reserved.</p>
+	<p>Handcrafted by <strong>Myungjun Song</strong></p>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Menu -->
+    <div class="floating-quick-menu">
+        <button class="quick-menu-toggle" aria-label="Toggle Quick Menu">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </button>
+        <div class="quick-menu-content">
+            <a href="index.html#home" class="quick-link">Home</a>
+            <a href="index.html#research" class="quick-link">Research Area</a>
+            <a href="index.html#publications" class="quick-link">Selected Publications</a>
+            <a href="index.html#contact" class="quick-link">Contact Us</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
