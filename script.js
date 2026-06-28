@@ -114,3 +114,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+    // Publication Tabs Toggle
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length > 0 && tabContents.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active classes
+                tabBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.background = '#e0e0e0';
+                    b.style.color = '#333';
+                });
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    content.style.display = 'none';
+                });
+
+                // Add active class to clicked
+                btn.classList.add('active');
+                btn.style.background = '#0033A0';
+                btn.style.color = 'white';
+                
+                const targetId = btn.getAttribute('data-target') || btn.textContent.trim();
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                    targetContent.style.display = 'block';
+                }
+            });
+        });
+    }
