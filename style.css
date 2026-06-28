@@ -1541,9 +1541,16 @@ html, body {
     flex-direction: column !important;
   }
   .hero-slider-outer .prev-btn {
-    left: -15px !important;
+    left: 16px !important;
+    z-index: 30 !important;
   }
   .hero-slider-outer .next-btn {
-    right: -15px !important;
+    right: 16px !important;
+    z-index: 30 !important;
+  }
+  .hero-slider-outer .slider-btn {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1rem !important;
   }
 }
