@@ -40,24 +40,38 @@
 </header>
 
     <main>
-        <section id="home" class="hero section">
-            <div class="hero-bg"></div>
-            <div class="container hero-content-grid">
-                <div class="hero-text">
-                    <h1 class="hero-title">Electrochemical Energy Storage Laboratory</h1>
-                    <p class="hero-subtitle">Innovating the future of energy storage materials and devices.</p>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-label">Yonsei University · Materials Science & Engineering</div>
+                <h1>
+                    Electrochemical<br>
+                    Energy Storage<br>
+                    <span>Laboratory</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Advanced materials and interfacial chemistry for next-generation batteries and electrochemical energy devices.
+                </p>
+                <div class="hero-buttons">
+                    <a href="research.html" class="btn primary">Research Areas</a>
+                    <a href="publication.html" class="btn secondary">Publications</a>
                 </div>
-                <div class="hero-image">
-                    <div class="slider-container">
-                        <div class="slider-wrapper">
-                            <img src="./images/main1.jpg" alt="Research Overview 1" class="slide-img active">
-                            <img src="./images/main2.jpg" alt="Research Overview 2" class="slide-img">
-                        </div>
-                        <!-- 좌우 컨트롤 화살표 버튼 -->
-                        <button class="slider-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
-                        <button class="slider-btn next-btn" aria-label="Next Slide">&#10095;</button>
+            </div>
+
+            <!-- 화살표가 액자 프레임 바깥으로 빠진 래퍼 구조 -->
+            <div class="hero-slider-outer slider-container">
+                <div class="hero-image-wrap">
+                    <div class="slider-wrapper">
+                        <img src="./images/main1.jpg" alt="EESL group photo 1" class="slide-img active">
+                        <img src="./images/main2.jpg" alt="EESL group photo 2" class="slide-img">
+                    </div>
+                    <!-- 글래스모피즘 캡션 -->
+                    <div class="image-caption">
+                        EESL Group, Yonsei University
                     </div>
                 </div>
+                <!-- 좌우 컨트롤 화살표 버튼 부활 (카드 외부 양옆 배치) -->
+                <button class="slider-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
+                <button class="slider-btn next-btn" aria-label="Next Slide">&#10095;</button>
             </div>
         </section>
 
