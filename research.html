@@ -10,8 +10,12 @@
 <body>
 <header class="header">
     <div class="container header-content">
-        <a href="index.html" class="logo">
-            <img src="./images/EESL logo.png" alt="EESL Logo">
+        <a href="index.html" class="logo-container">
+            <img src="./images/EESL logo.png" alt="EESL Logo" class="header-logo-img">
+            <div class="logo-text-group">
+                <span class="logo-main-text">EESL</span>
+                <span class="logo-sub-text">Electrochemical Energy Storage Lab</span>
+            </div>
         </a>
         <nav class="nav">
             <ul class="nav-list">
@@ -86,35 +90,25 @@
     </main>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>Electrochemical Energy Storage Laboratory (EESL)</h3>
-                <p>Engineering Building II, Yonsei University</p>
-                <p>50, Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea</p>
-            </div>
-            <div class="footer-contact">
-                <p>Email: <a href="mailto:smbak@yonsei.ac.kr">smbak@yonsei.ac.kr</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EESL. All rights reserved.</p>
-            <p class="handcrafted">Handcrafted by Myungjun Song</p>
+        <div class="container">
+            <p>&copy; 2026 Electrochemical Energy Storage Laboratory (EESL). All rights reserved.</p>
+	<p>Handcrafted by <strong>Myungjun Song</strong></p>
         </div>
     </footer>
 
     <!-- Floating Quick Menu -->
-    <div class="quick-menu">
+    <div class="floating-quick-menu active">
+        <button class="quick-menu-toggle" aria-label="Toggle Quick Menu">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </button>
         <div class="quick-menu-content">
             <a href="index.html#home" class="quick-link">Home</a>
             <a href="index.html#research" class="quick-link">Research Area</a>
             <a href="index.html#publications" class="quick-link">Selected Publications</a>
             <a href="index.html#contact" class="quick-link">Contact Us</a>
         </div>
-        <button class="quick-menu-btn" aria-label="Toggle Quick Menu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 4v16m8-8H4"></path>
-            </svg>
-        </button>
     </div>
 
     <script src="script.js"></script>

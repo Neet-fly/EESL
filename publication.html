@@ -6,13 +6,33 @@
     <title>Publication | EESL</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .pub-link {
+            text-decoration: none;
+            color: inherit;
+            display: block; /* makes the whole li area clickable */
+        }
+        .pub-link:hover {
+            color: var(--primary-color, #0033A0);
+        }
+        .pub-link:hover strong {
+            color: var(--primary-dark, #002266);
+        }
+        .pub-link:hover .journal {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container header-content">
-            <a href="index.html" class="logo">
-                <img src="./images/EESL logo.png" alt="EESL Logo">
-            </a>
+            <a href="index.html" class="logo-container">
+            <img src="./images/EESL logo.png" alt="EESL Logo" class="header-logo-img">
+            <div class="logo-text-group">
+                <span class="logo-main-text">EESL</span>
+                <span class="logo-sub-text">Electrochemical Energy Storage Lab</span>
+            </div>
+        </a>
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -43,28 +63,28 @@
                         <h3 class="year-title">2026</h3>
                         <ul class="publication-list">
                             <li>
-                                <a href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adfm.76235" target="_blank" style="text-decoration: none; color: inherit;">
-                                    [Wiley - Advanced Functional Materials] <strong>Suhwan Seok</strong>, Donghwa Lee, Jinbo Kim, Myeongjin An, Jisoo Park, Junho Sung, Eunsung Hwang, <strong>Seong-Min Bak</strong>*, Jeonghun Kim*, Eunho Lee*, "Electro‐Steric Ion Confinement in Polyelectrolyte Networks for Robust Nonvolatile Artificial Synapse", <i class="journal">Advanced Functional Materials</i> <span class="year">(2026)</span>
+                                <a href="https://doi.org/10.1039/D6EE00273K" target="_blank" class="pub-link">
+                                    J. B. Park, M. Ryu, E.-Y. Jeong, Y. G. Choi, S. H. Cho, S. Y. Kim, B. Kang, K. Kang, <strong>S.-M. Bak</strong>, J. H. Park. Concentration–Structure Dual-Gradient Architecture in High-Ni/Low-Co Single-Crystal NCM Cathodes. <i class="journal">Energy Environ. Sci.</i> <span class="year">2026</span>, 19 (11), 3612–3628.
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.sciencedirect.com/science/article/pii/S2352152X26001477" target="_blank" style="text-decoration: none; color: inherit;">
-                                    [ScienceDirect - Journal of Energy Storage] Hyun-Sik Kim, Tae-Yeon Kim, <strong>Seong-Min Bak</strong>*, "Unraveling the reaction mechanisms of advanced electrode materials for next-generation batteries", <i class="journal">Journal of Energy Storage</i> <span class="year">(2026)</span>
+                                <a href="https://doi.org/10.1002/adma.202515865" target="_blank" class="pub-link">
+                                    J. Min, N. F. Pietra, C. Connor, Z. Liang, E. C. Jackson, L. Tao, D. Xia, X. Feng, D. Wierzbicki, <strong>S.-M. Bak</strong>, R. B. Moore, L. A. Madsen, F. Lin. Improving Ionic Conformality Across Polymer Electrolyte|Electrode Interfaces. <i class="journal">Adv. Mater.</i> <span class="year">2026</span>, 38 (9), e15865.
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.sciencedirect.com/science/article/pii/S0926337326002444" target="_blank" style="text-decoration: none; color: inherit;">
-                                    [ScienceDirect - Applied Catalysis B] <strong>Myeong-jun Song</strong>, <strong>Yeseul Shin</strong>, <strong>Seong-Min Bak</strong>*, "Coordination polymer-induced interface engineering for high-density dual-Fe oxygen reduction catalysts in Zn–Air batteries", <i class="journal">Applied Catalysis B: Environment and Energy</i>, 390, 126624 <span class="year">(2026)</span>
+                                <a href="https://doi.org/10.1016/j.est.2026.120483" target="_blank" class="pub-link">
+                                    J. A. Kim, S. H. Park, Y. H. Hong, B. J. Kang, G. R. Kim, J. Eun, <strong>S.-M. Bak</strong>, W. Ahn, H. K. Kim. Nanoperforated Graphene Microspheres Decorated with Zinc Oxide as a Stable Host for Dendrite-Free Lithium Metal Anodes. <i class="journal">J. Energy Storage</i> <span class="year">2026</span>, 151, 120483.
                                 </a>
                             </li>
                             <li>
-                                <a href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adma.202515865" target="_blank" style="text-decoration: none; color: inherit;">
-                                    [Wiley - Advanced Materials] Jungki Min, Nicholas F. Pietra, Callum গঠনonnor, Zhaohui Liang, Erin C. Jackson, Lei Tao, Dawei Xia, Xu Feng, Dominik Wierzbicki, <strong>Seong-Min Bak</strong>, Robert B. Moore, Louis A. Madsen, Feng Lin*, "Improving Ionic Conformality Across Polymer Electrolyte|Electrode Interfaces", <i class="journal">Advanced Materials</i>, 38, 9 <span class="year">(2026)</span>
+                                <a href="https://doi.org/10.1016/j.apcatb.2026.126624" target="_blank" class="pub-link">
+                                    D. Kim, S. Jung, G. Park, <strong>M. J. Song</strong>, D. Lee, J. Y. Lee, H. Choi, J. Kim, Y. Shin, J. Na, H. Lim, S. Oh, <strong>S.-M. Bak</strong>, J. Kim. Coordination Polymer-Induced Interface Engineering for High-Density Dual-Fe Oxygen Reduction Catalysts in Zn–Air Batteries. <i class="journal">Appl. Catal. B</i> <span class="year">2026</span>, 390, 126624.
                                 </a>
                             </li>
                             <li>
-                                <a href="https://pubs.rsc.org/en/content/articlehtml/2026/ee/d6ee00273k" target="_blank" style="text-decoration: none; color: inherit;">
-                                    [RSC - Energy & Environmental Science] Jun Bum Park, Minje Ryu, <strong>Eui-Yeon Jeong</strong>, Young Gyun Choi, Sung Hyun Cho, Seok Yun Kim, Byungwook Kang, Kisuk Kang*, <strong>Seong-Min Bak</strong>*, Jong Hyeok Park*, "Concentration–structure dual-gradient architecture in high-Ni/low-Co single-crystal NCM cathodes", <i class="journal">Energy & Environmental Science</i> <span class="year">(2026)</span>
+                                <a href="https://doi.org/10.1002/adfm.76235" target="_blank" class="pub-link">
+                                    D. Lee, J. Kim, M. An, J. Park, J. Sung, E. Hwang, S. Seok, <strong>S.-M. Bak</strong>, J. Kim, E. Lee. Electro-Steric Ion Confinement in Polyelectrolyte Networks for Robust Nonvolatile Artificial Synapse. <i class="journal">Adv. Funct. Mater.</i> <span class="year">2026</span>.
                                 </a>
                             </li>
                         </ul>
@@ -82,35 +102,25 @@
     </main>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>Electrochemical Energy Storage Laboratory (EESL)</h3>
-                <p>Engineering Building II, Yonsei University</p>
-                <p>50, Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea</p>
-            </div>
-            <div class="footer-contact">
-                <p>Email: <a href="mailto:smbak@yonsei.ac.kr">smbak@yonsei.ac.kr</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EESL. All rights reserved.</p>
-            <p class="handcrafted">Handcrafted by Myungjun Song</p>
+        <div class="container">
+            <p>&copy; 2026 Electrochemical Energy Storage Laboratory (EESL). All rights reserved.</p>
+	<p>Handcrafted by <strong>Myungjun Song</strong></p>
         </div>
     </footer>
 
     <!-- Floating Quick Menu -->
-    <div class="quick-menu">
+    <div class="floating-quick-menu active">
+        <button class="quick-menu-toggle" aria-label="Toggle Quick Menu">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </button>
         <div class="quick-menu-content">
             <a href="index.html#home" class="quick-link">Home</a>
             <a href="index.html#research" class="quick-link">Research Area</a>
             <a href="index.html#publications" class="quick-link">Selected Publications</a>
             <a href="index.html#contact" class="quick-link">Contact Us</a>
         </div>
-        <button class="quick-menu-btn" aria-label="Toggle Quick Menu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 4v16m8-8H4"></path>
-            </svg>
-        </button>
     </div>
 
     <script src="script.js"></script>

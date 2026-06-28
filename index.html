@@ -10,8 +10,12 @@
 <body>
     <header class="header">
     <div class="container header-content">
-        <a href="index.html" class="logo">
-            <img src="./images/EESL logo.png" alt="EESL Logo">
+        <a href="index.html" class="logo-container">
+            <img src="./images/EESL logo.png" alt="EESL Logo" class="header-logo-img">
+            <div class="logo-text-group">
+                <span class="logo-main-text">EESL</span>
+                <span class="logo-sub-text">Electrochemical Energy Storage Lab</span>
+            </div>
         </a>
         <nav class="nav">
             <ul class="nav-list">
@@ -42,7 +46,15 @@
                     <p class="hero-subtitle">Innovating the future of energy storage materials and devices.</p>
                 </div>
                 <div class="hero-image">
-                    <<img src="./images/main-hero.jpg" alt="EESL Research Overview" class="hero-placeholder-img">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="./images/main1.jpg" alt="Research Overview 1" class="slide-img active">
+                            <img src="./images/main2.jpg" alt="Research Overview 2" class="slide-img">
+                        </div>
+                        <!-- 좌우 컨트롤 화살표 버튼 -->
+                        <button class="slider-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
+                        <button class="slider-btn next-btn" aria-label="Next Slide">&#10095;</button>
+                    </div>
                 </div>
             </div>
         </section>
