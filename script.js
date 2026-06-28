@@ -19,44 +19,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Floating Quick Menu Toggle (now jumps to pages instead of scroll spy)
+    // Floating Quick Menu Toggle (Optimized for Mobile & Sub-pages)
     const quickMenuToggle = document.querySelector('.quick-menu-toggle');
     const quickMenuContent = document.querySelector('.quick-menu-content');
     const quickLinks = document.querySelectorAll('.quick-link');
 
     if (quickMenuToggle && quickMenuContent) {
-        quickMenuToggle.addEventListener('click', () => {
+        const toggleMenu = (e) => {
+            if (e.type === 'touchstart') {
+                e.preventDefault();
+                e.stopPropagation();
+            }
             quickMenuToggle.classList.toggle('active');
             quickMenuContent.classList.toggle('show');
-        });
+        };
 
-        // Close quick menu on link click and handle smooth scrolling on the same page
+        quickMenuToggle.addEventListener('click', toggleMenu);
+        quickMenuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
+
         quickLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+            const handleLinkClick = (e) => {
+                if (e.type === 'touchstart') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
                 const href = link.getAttribute('href');
+
                 if (href && href.startsWith('index.html#')) {
                     const targetId = href.split('#')[1];
                     const targetElement = document.getElementById(targetId);
                     
-                    // If target section is on the current page (i.e. we are already on index.html)
                     if (targetElement) {
-                        e.preventDefault(); // prevent reload
+                        // On the same page, scroll smoothly
+                        if (e.type !== 'touchstart') e.preventDefault(); // Prevent default if click (touchstart already prevented)
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                         window.history.pushState(null, null, `#${targetId}`);
+                    } else {
+                        // Not on index.html, so navigate to index.html#targetId naturally
+                        window.location.href = href;
                     }
+                } else if (href) {
+                    window.location.href = href;
                 }
+
                 quickMenuToggle.classList.remove('active');
                 quickMenuContent.classList.remove('show');
-            });
+            };
+
+            link.addEventListener('click', handleLinkClick);
+            link.addEventListener('touchstart', handleLinkClick, { passive: false });
         });
 
-        // Close quick menu when clicking outside
-        document.addEventListener('click', (e) => {
+        // Close quick menu when clicking/touching outside
+        const closeMenuOutside = (e) => {
             if (!e.target.closest('.floating-quick-menu')) {
                 quickMenuToggle.classList.remove('active');
                 quickMenuContent.classList.remove('show');
             }
-        });
+        };
+
+        document.addEventListener('click', closeMenuOutside);
+        document.addEventListener('touchstart', closeMenuOutside, { passive: true });
     }
 
     // Member Details Toggle
@@ -113,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentSlide);
         });
     }
-});
 
     // Publication Tabs Toggle
     const tabBtns = document.querySelectorAll('.tab-btn');
@@ -147,3 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+});
