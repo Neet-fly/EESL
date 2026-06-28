@@ -1097,3 +1097,22 @@ ul {
 .next-btn {
     right: -60px;
 }
+
+@media (max-width: 768px) {
+    .history-col {
+        display: contents;
+    }
+    .history-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .history-block.work-experience {
+        order: 1;
+    }
+    .history-block.education {
+        order: 2;
+    }
+    .history-block.research-area {
+        order: 3;
+    }
+}
