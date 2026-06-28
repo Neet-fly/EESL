@@ -53,7 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (targetElement) {
                         // On the same page, scroll smoothly
                         if (e.type !== 'touchstart') e.preventDefault(); // Prevent default if click (touchstart already prevented)
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Fix for iOS Safari bug where smooth scrolling fails at scrollY === 0
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                        
                         window.history.pushState(null, null, `#${targetId}`);
                     } else {
                         // Not on index.html, so navigate to index.html#targetId naturally
