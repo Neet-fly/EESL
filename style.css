@@ -1539,6 +1539,13 @@ html, body {
   .hero {
     display: flex !important;
     flex-direction: column !important;
+    padding-top: 120px !important;
+    height: auto !important;
+    min-height: calc(100vh - 90px) !important;
+  }
+  .hero-label {
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
   }
   .hero-slider-outer .prev-btn {
     left: 16px !important;
