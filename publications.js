@@ -782,5 +782,12 @@ const publicationsData = [
         "authorsAndTitle": "S.-B. Ma, K.-W. Nam, W.-S. Yoon, <strong>S.-M. Bak</strong>, X.-Q. Yang, B.-W. Cho, K.-B. Kim. \"Nano-Sized Lithium Manganese Oxide Dispersed on Carbon Nanotubes for Energy Storage Applications.\"",
         "journal": "Electrochem. Commun.",
         "details": ", 11 (8), 1575–1578."
+    },
+    {
+        "year": "Patent",
+        "link": "",
+        "authorsAndTitle": "Coming Soon",
+        "journal": "",
+        "details": ""
     }
 ];

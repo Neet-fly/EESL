@@ -250,5 +250,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             beforeArchive.innerHTML = archiveHtml;
         }
+
+        // Render Patent
+        const patentTab = document.getElementById('Patent');
+        if (patentTab) {
+            const container = patentTab.querySelector('.pub-list');
+            if (container) {
+                const patentPapers = publicationsData.filter(p => p.year === 'Patent');
+                container.innerHTML = renderList(patentPapers);
+            }
+        }
     }
 });
