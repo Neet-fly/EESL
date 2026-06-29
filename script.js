@@ -38,12 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         quickMenuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
 
         quickLinks.forEach(link => {
-            const handleLinkClick = (e) => {
-                if (e.type === 'touchstart') {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-
+            link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
 
                 if (href && href.startsWith('index.html#')) {
@@ -51,34 +46,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     const targetElement = document.getElementById(targetId);
                     
                     if (targetElement) {
-                        // On the same page, scroll smoothly
-                        if (e.type !== 'touchstart') e.preventDefault(); // Prevent default if click (touchstart already prevented)
+                        e.preventDefault(); // Prevent native instant jump
                         
                         // Fix for iOS Safari bug where smooth scrolling fails at scrollY === 0
-                        const headerOffset = 80;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        if (window.scrollY === 0) {
+                            window.scrollTo(0, 1);
+                        }
                         
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
                         
-                        window.history.pushState(null, null, `#${targetId}`);
+                        try {
+                            window.history.pushState(null, null, `#${targetId}`);
+                        } catch (err) {
+                            // Prevent crash on local file:/// protocol
+                        }
                     } else {
-                        // Not on index.html, so navigate to index.html#targetId naturally
                         window.location.href = href;
                     }
                 } else if (href) {
                     window.location.href = href;
                 }
 
+                // Hide the menu
                 quickMenuToggle.classList.remove('active');
                 quickMenuContent.classList.remove('show');
-            };
-
-            link.addEventListener('click', handleLinkClick);
-            link.addEventListener('touchstart', handleLinkClick, { passive: false });
+            });
         });
 
         // Close quick menu when clicking/touching outside
