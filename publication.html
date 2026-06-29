@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publication | EESL</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publication | EESL</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
         .pub-link {
             text-decoration: none;
             color: inherit;
@@ -22,104 +23,93 @@
             text-decoration: underline;
         }
     </style>
-    <link rel="icon" href="./images/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="./images/favicon.png">
+<link href="./images/favicon.png" rel="icon" type="image/png"/>
+<link href="./images/favicon.png" rel="apple-touch-icon"/>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-content">
-            <a href="index.html" class="logo-container">
-            <img src="./images/EESL logo.png" alt="EESL Logo" class="header-logo-img">
-            <div class="logo-text-group">
-                <span class="logo-main-text">EESL</span>
-                <span class="logo-sub-text">Electrochemical Energy Storage Lab</span>
-            </div>
-        </a>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="pi.html" class="nav-link">P.I.</a></li>
-                    <li><a href="member.html" class="nav-link">Member</a></li>
-                    <li><a href="alumni.html" class="nav-link">Alumni</a></li>
-                    <li><a href="publication.html" class="nav-link active">Publication</a></li>
-                    <li><a href="news.html" class="nav-link">News</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+<header class="header">
+<div class="container header-content">
+<a class="logo-container" href="index.html">
+<img alt="EESL Logo" class="header-logo-img" src="./images/EESL logo.png"/>
+<div class="logo-text-group">
+<span class="logo-main-text">EESL</span>
+<span class="logo-sub-text">Electrochemical Energy Storage Lab</span>
+</div>
+</a>
+<nav class="nav">
+<ul class="nav-list">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="research.html">Research</a></li>
+<li><a class="nav-link" href="pi.html">P.I.</a></li>
+<li><a class="nav-link" href="member.html">Members</a></li>
+<li><a class="nav-link active" href="publication.html">Publication</a></li>
+<li><a class="nav-link" href="news.html">News</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<button aria-label="Toggle Menu" class="mobile-menu-btn">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<main class="page-content">
+<section class="section bg-light">
+<div class="container">
+<h2 class="section-title">Publications</h2>
+<div class="publications-container">
+<div class="tabs-container" style="display: flex; gap: 10px; margin-bottom: 30px; justify-content: center; flex-wrap: wrap;">
+<button class="tab-btn active" data-target="2026" style="padding: 8px 20px; border: none; border-radius: 20px; background: #0033A0; color: white; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2026</button>
+<button class="tab-btn" data-target="2025" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2025</button>
+<button class="tab-btn" data-target="2024" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2024</button>
+<button class="tab-btn" data-target="2023" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2023</button>
+<button class="tab-btn" data-target="before-archive" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">Before</button>
+<button class="tab-btn" data-target="Patent" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">Patent</button>
+</div>
+<div class="tab-content active" id="2026">
+<ul class="publication-list pub-list"></ul>
+</div>
+<div class="tab-content" id="2025" style="display: none;">
+<ul class="publication-list pub-list"></ul>
+</div>
+<div class="tab-content" id="2024" style="display: none;">
+<ul class="publication-list pub-list"></ul>
+</div>
+<div class="tab-content" id="2023" style="display: none;">
+<ul class="publication-list pub-list"></ul>
+</div>
+<div class="tab-content" id="before-archive" style="display: none;">
+</div>
+<div class="tab-content" id="Patent" style="display: none;">
+<ul class="publication-list pub-list"></ul>
+</div>
+</div>
+</div>
 
-    <main class="page-content">
-        <section class="section bg-light">
-            <div class="container">
-                <h2 class="section-title">Publications</h2>
-
-                <div class="publications-container">
-                <div class="tabs-container" style="display: flex; gap: 10px; margin-bottom: 30px; justify-content: center; flex-wrap: wrap;">
-                    <button class="tab-btn active" data-target="2026" style="padding: 8px 20px; border: none; border-radius: 20px; background: #0033A0; color: white; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2026</button>
-                    <button class="tab-btn" data-target="2025" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2025</button>
-                    <button class="tab-btn" data-target="2024" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2024</button>
-                    <button class="tab-btn" data-target="2023" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">2023</button>
-                    <button class="tab-btn" data-target="before-archive" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">Before</button>
-                    <button class="tab-btn" data-target="Patent" style="padding: 8px 20px; border: none; border-radius: 20px; background: #e0e0e0; color: #333; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif;">Patent</button>
-                </div>
-
-                    <div id="2026" class="tab-content active">
-                        <ul class="publication-list pub-list"></ul>
-                    </div>
-
-                    <div id="2025" class="tab-content" style="display: none;">
-                        <ul class="publication-list pub-list"></ul>
-                    </div>
-
-                    <div id="2024" class="tab-content" style="display: none;">
-                        <ul class="publication-list pub-list"></ul>
-                    </div>
-
-                    <div id="2023" class="tab-content" style="display: none;">
-                        <ul class="publication-list pub-list"></ul>
-                    </div>
-
-                    <div id="before-archive" class="tab-content" style="display: none;">
-                    </div>
-                    <div id="Patent" class="tab-content" style="display: none;">
-                        <ul class="publication-list pub-list"></ul>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Electrochemical Energy Storage Laboratory (EESL). All rights reserved.</p>
-	<p>Handcrafted by <strong>Myeong-Jun Song</strong></p>
-        </div>
-    </footer>
-
-    <!-- Floating Quick Menu -->
-    <div class="floating-quick-menu active">
-        <button class="quick-menu-toggle" aria-label="Toggle Quick Menu">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </button>
-        <div class="quick-menu-content">
-            <a href="index.html#home" class="quick-link">Home</a>
-            <a href="index.html#research" class="quick-link">Research Area</a>
-            <a href="index.html#publications" class="quick-link">Selected Publications</a>
-            <a href="index.html#contact" class="quick-link">Contact Us</a>
-        </div>
-    </div>
-
-    <script src="publications.js"></script>
-    <script src="script.js"></script>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<p>© 2026 Electrochemical Energy Storage Laboratory (EESL). All rights reserved.</p>
+<p>Handcrafted by <strong>Myeong-Jun Song</strong></p>
+</div>
+</footer>
+<!-- Floating Quick Menu -->
+<div class="floating-quick-menu active">
+<button aria-label="Toggle Quick Menu" class="quick-menu-toggle">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</button>
+<div class="quick-menu-content">
+<a class="quick-link" href="index.html#home">Home</a>
+<a class="quick-link" href="index.html#research">Research Area</a>
+<a class="quick-link" href="index.html#publications">Selected Publications</a>
+<a class="quick-link" href="index.html#contact">Contact Us</a>
+</div>
+</div>
+<script src="publications.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
