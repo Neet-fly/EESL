@@ -1256,6 +1256,11 @@ ul {
   color: #d7e5ff;
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
+}
+.hero-br {
+  display: none;
+}
   letter-spacing: 0.02em;
   background: rgba(255, 255, 255, 0.06);
 }
@@ -1567,6 +1572,8 @@ html, body {
     margin-top: 10px !important;
     margin-bottom: 20px !important;
   }
+  .hero-dot { display: none; }
+  .hero-br { display: block; }
   .hero-slider-outer .prev-btn {
     left: 16px !important;
     z-index: 30 !important;
