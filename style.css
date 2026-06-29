@@ -412,9 +412,16 @@ ul {
     transition: var(--transition);
 }
 
-.btn-detail:hover, .btn-detail.active {
+.btn-detail.active {
     background-color: var(--primary-color);
     color: var(--white);
+}
+
+@media (hover: hover) {
+    .btn-detail:hover {
+        background-color: var(--primary-color);
+        color: var(--white);
+    }
 }
 
 .member-contact {

@@ -46,16 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     const targetElement = document.getElementById(targetId);
                     
                     if (targetElement) {
-                        e.preventDefault(); // Prevent native instant jump
+                        e.preventDefault(); // Prevent native jump
                         
-                        // Fix for iOS Safari bug where smooth scrolling fails at scrollY === 0
-                        if (window.scrollY === 0) {
-                            window.scrollTo(0, 1);
-                        }
-                        
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                         
                         try {
+                            // Modern smooth scrolling
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: "smooth"
+                            });
+                        } catch (err) {
+                            // Fallback for older mobile browsers that throw TypeError on dictionary
+                            window.scrollTo(0, offsetPosition);
+                        }
+                        
+                        try {
+                            // Update URL hash
                             window.history.pushState(null, null, `#${targetId}`);
                         } catch (err) {
                             // Prevent crash on local file:/// protocol
