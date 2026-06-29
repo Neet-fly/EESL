@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         quickLinks.forEach(link => {
             const handleLinkClick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 if (isActionTriggered) return;
 
                 const href = link.getAttribute('href');
@@ -49,22 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     const targetId = href.split('#')[1];
                     const targetElement = document.getElementById(targetId);
                     
-                    if (targetElement) {
-                        // [홈 화면] 타겟 요소가 존재할 경우: 스크롤 애니메이션 실행
-                        e.preventDefault(); 
-                        if (e.type === 'touchstart') { e.stopPropagation(); }
-                        
+                    // 정확한 홈 화면 판별
+                    const pathname = window.location.pathname;
+                    const isHome = pathname.endsWith('/') || pathname.endsWith('index.html') || pathname === '' || pathname.includes('index.html');
+                    
+                    if (isHome && targetElement) {
                         isActionTriggered = true;
                         
-                        // iOS Safari 스크롤 버그 방어 (0에서 부드러운 스크롤 무시 현상)
-                        if (window.scrollY === 0) {
-                            window.scrollTo(0, 1);
-                        }
-                        
                         try {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                            targetElement.scrollIntoView({ behavior: "smooth" });
                         } catch (err) {
-                            // 모바일 구형 브라우저 TypeError 방어용 폴백
+                            // 모바일 구형 브라우저 방어 폴백
                             const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
                             window.scrollTo(0, offsetPosition);
                         }
@@ -72,25 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         try {
                             window.history.pushState(null, null, `#${targetId}`);
                         } catch (err) {
-                            // 로컬 file:/// 보안 크래시 방어
+                            // 로컬 파일 보안 크래시 방어
                         }
                         
-                        // 0.5초 후 락 해제
                         setTimeout(() => { isActionTriggered = false; }, 500);
                     } else {
-                        // [서브 페이지] 타겟 요소가 없을 경우: 자연스럽게 주소 이동
-                        window.location.href = href;
+                        // 서브 페이지인 경우 명확한 주소 전환
+                        window.location.href = 'index.html#' + targetId;
                     }
                 } else if (href) {
                     window.location.href = href;
                 }
 
-                // 이동 후 메뉴 즉각 닫기
                 quickMenuToggle.classList.remove('active');
                 quickMenuContent.classList.remove('show');
             };
 
-            // click과 touchstart 듀얼 바인딩으로 터치 유실 및 씹힘 방지
             link.addEventListener('click', handleLinkClick);
             link.addEventListener('touchstart', handleLinkClick, { passive: false });
         });
