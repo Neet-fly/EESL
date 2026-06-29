@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide-img');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
+    const captionEl = document.querySelector('.image-caption');
 
     if (slides.length > 0 && prevBtn && nextBtn) {
         let currentSlide = 0;
@@ -149,6 +150,21 @@ document.addEventListener('DOMContentLoaded', () => {
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             slides[index].classList.add('active');
+            
+            if (captionEl) {
+                const captionText = slides[index].getAttribute('data-caption');
+                if (captionText) {
+                    captionEl.textContent = captionText;
+                }
+            }
+        }
+
+        // Initialize caption on first load
+        if (captionEl && slides[0]) {
+            const initialCaption = slides[0].getAttribute('data-caption');
+            if (initialCaption) {
+                captionEl.textContent = initialCaption;
+            }
         }
 
         prevBtn.addEventListener('click', () => {
