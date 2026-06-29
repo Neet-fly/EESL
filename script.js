@@ -180,4 +180,50 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Dynamic Publication Rendering
+    if (typeof publicationsData !== 'undefined' && document.querySelector('.publications-container')) {
+        const renderList = (papers) => {
+            return papers.map(p => `
+                <li class="pub-item">
+                    <a href="${p.link}" target="_blank" class="pub-link">
+                        ${p.authorsAndTitle} <i class="journal">${p.journal}</i> <span class="year">${p.year}</span>${p.details}
+                    </a>
+                </li>
+            `).join('');
+        };
+
+        // Render 2026 to 2023
+        [2026, 2025, 2024, 2023].forEach(year => {
+            const yearTab = document.getElementById(year.toString());
+            if (yearTab) {
+                const container = yearTab.querySelector('.pub-list');
+                if (container) {
+                    const yearPapers = publicationsData.filter(p => p.year === year);
+                    container.innerHTML = renderList(yearPapers);
+                }
+            }
+        });
+
+        // Render Before 2023
+        const beforeArchive = document.getElementById('before-archive');
+        if (beforeArchive) {
+            let archiveHtml = '';
+            // Get unique years before 2023 in descending order
+            const oldYears = [...new Set(publicationsData.filter(p => p.year < 2023).map(p => p.year))].sort((a, b) => b - a);
+            
+            oldYears.forEach(year => {
+                const yearPapers = publicationsData.filter(p => p.year === year);
+                archiveHtml += `
+                    <div class="year-section">
+                        <h3 class="year-title">${year}</h3>
+                        <ul class="publication-list pub-list">
+                            ${renderList(yearPapers)}
+                        </ul>
+                    </div>
+                `;
+            });
+            beforeArchive.innerHTML = archiveHtml;
+        }
+    }
 });

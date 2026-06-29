@@ -970,6 +970,10 @@ ul {
     .member-name {
         flex-direction: column;
         gap: 5px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
     }
 }
 
