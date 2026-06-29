@@ -37,8 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         quickMenuToggle.addEventListener('click', toggleMenu);
         quickMenuToggle.addEventListener('touchstart', toggleMenu, { passive: false });
 
+        let isActionTriggered = false;
+
         quickLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+            const handleLinkClick = (e) => {
+                if (isActionTriggered) return;
+
                 const href = link.getAttribute('href');
 
                 if (href && href.startsWith('index.html#')) {
@@ -46,40 +50,49 @@ document.addEventListener('DOMContentLoaded', () => {
                     const targetElement = document.getElementById(targetId);
                     
                     if (targetElement) {
-                        e.preventDefault(); // Prevent native jump
+                        // [홈 화면] 타겟 요소가 존재할 경우: 스크롤 애니메이션 실행
+                        e.preventDefault(); 
+                        if (e.type === 'touchstart') { e.stopPropagation(); }
                         
-                        const headerOffset = 80;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        isActionTriggered = true;
+                        
+                        // iOS Safari 스크롤 버그 방어 (0에서 부드러운 스크롤 무시 현상)
+                        if (window.scrollY === 0) {
+                            window.scrollTo(0, 1);
+                        }
                         
                         try {
-                            // Modern smooth scrolling
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: "smooth"
-                            });
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
                         } catch (err) {
-                            // Fallback for older mobile browsers that throw TypeError on dictionary
+                            // 모바일 구형 브라우저 TypeError 방어용 폴백
+                            const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
                             window.scrollTo(0, offsetPosition);
                         }
                         
                         try {
-                            // Update URL hash
                             window.history.pushState(null, null, `#${targetId}`);
                         } catch (err) {
-                            // Prevent crash on local file:/// protocol
+                            // 로컬 file:/// 보안 크래시 방어
                         }
+                        
+                        // 0.5초 후 락 해제
+                        setTimeout(() => { isActionTriggered = false; }, 500);
                     } else {
+                        // [서브 페이지] 타겟 요소가 없을 경우: 자연스럽게 주소 이동
                         window.location.href = href;
                     }
                 } else if (href) {
                     window.location.href = href;
                 }
 
-                // Hide the menu
+                // 이동 후 메뉴 즉각 닫기
                 quickMenuToggle.classList.remove('active');
                 quickMenuContent.classList.remove('show');
-            });
+            };
+
+            // click과 touchstart 듀얼 바인딩으로 터치 유실 및 씹힘 방지
+            link.addEventListener('click', handleLinkClick);
+            link.addEventListener('touchstart', handleLinkClick, { passive: false });
         });
 
         // Close quick menu when clicking/touching outside

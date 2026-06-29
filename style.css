@@ -1585,15 +1585,19 @@ html, body {
     pointer-events: auto !important;
 }
 
+.quick-menu-content {
+    z-index: 99999 !important;
+}
+
 @media (max-width: 768px) {
     .quick-menu-content {
         bottom: 75px !important;
         right: 0 !important;
-        width: 200px !important;
+        width: 210px !important;
     }
     
     .quick-link {
-        padding: 14px 20px !important;
+        padding: 14px 22px !important;
         font-size: 15px !important;
     }
 }
